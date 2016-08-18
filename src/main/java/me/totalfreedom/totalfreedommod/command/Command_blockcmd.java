@@ -23,7 +23,7 @@ public class Command_blockcmd extends FreedomCommand
 
         if (args[0].equals("purge"))
         {
-            FUtil.adminAction(sender.getName(), "Unblocking commands for all players", true);
+            FUtil.adminAction(sender.getName(), "De-Activating server-wide command block!", true);
             int counter = 0;
             for (Player player : server.getOnlinePlayers())
             {
@@ -40,7 +40,7 @@ public class Command_blockcmd extends FreedomCommand
 
         if (args[0].equals("-a"))
         {
-            FUtil.adminAction(sender.getName(), "Blocking commands for all non-admins", true);
+            FUtil.adminAction(sender.getName(), "Activating server-wide command block for everyone(not admins)!", true);
             int counter = 0;
             for (Player player : server.getOnlinePlayers())
             {
@@ -51,7 +51,7 @@ public class Command_blockcmd extends FreedomCommand
 
                 counter += 1;
                 plugin.pl.getPlayer(player).setCommandsBlocked(true);
-                msg(player, "Your commands have been blocked by an admin.", ChatColor.RED);
+                msg(player, "You are prohibited to do commands (they have been blocked).", ChatColor.RED);
             }
 
             msg("Blocked commands for " + counter + " players.");
