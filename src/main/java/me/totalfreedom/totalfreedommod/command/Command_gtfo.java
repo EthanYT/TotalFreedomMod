@@ -40,7 +40,7 @@ public class Command_gtfo extends FreedomCommand
             reason = StringUtils.join(ArrayUtils.subarray(args, 1, args.length), " ");
         }
 
-        FUtil.bcastMsg(player.getName() + " has been a VERY naughty, naughty boy.", ChatColor.RED);
+        FUtil.bcastMsg(player.getName() + " broke the rules.", ChatColor.RED);
 
         // Undo WorldEdits
         try
@@ -93,7 +93,7 @@ public class Command_gtfo extends FreedomCommand
         plugin.bm.addBan(Ban.forPlayerFuzzy(player, sender, null, reason));
 
         // Kick player
-        player.kickPlayer(ChatColor.RED + "GTFO");
+        player.kickPlayer(ChatColor.RED + "You have been susended from the server for 24 hours.");
 
         return true;
     }
